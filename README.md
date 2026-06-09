@@ -30,7 +30,7 @@ Sistema backend de gestión de inventario desarrollado con Spring Boot, diseñad
 - Java 17+
 - Docker Desktop
 
-## ⚡ Levantar el proyecto
+## Levantar el proyecto
 
 ```bash
 # 1. Clonar el repositorio
