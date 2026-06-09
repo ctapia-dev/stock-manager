@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: stock-manager
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stockdb
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+  cache:
+    type: redis
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    com.cony.stockmanager: DEBUG
+    org.springframework.security: DEBUG
+
+jwt:
+  secret: ${JWT_SECRET:mi_secreto_super_seguro_de_al_menos_32_caracteres_para_hmac}
+  expiration: ${JWT_EXPIRATION:86400000}
